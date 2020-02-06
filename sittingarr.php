@@ -19,6 +19,7 @@ $students = array
 $arrlength = count($students);
 $f=array();
 $m=array();
+// divide in groups according to gander
 for($x = 0; $x < $arrlength; $x++)
 {
   if($students[$x]['gender']=="m")
@@ -39,12 +40,14 @@ else {
   $min=$flen;
 }
 $output=array();
+// loop till less member array
 for($x = 0; $x < $min; $x++)
 {
   array_push($output,$f[$x]);
   array_push($output,$m[$x]);
   array_shift($m);
 }
+// merge output array with remaining member array
 print_r(array_merge($output,$m));
 
 
