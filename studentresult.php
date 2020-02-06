@@ -14,6 +14,7 @@ $subject=array( "12"=>array(array("name" => "hindi","code" =>"h","mm" => "20"),
                             array("name" => "science","code" =>"s","mm" => "20")));
 
 //A student is considered pass only if he clears 40% of his subjects.
+
 foreach ($student as $key=>$value)
 {
   $gra=$value['grade'];
@@ -61,6 +62,8 @@ foreach ($student as $key=>$value)
 echo "</table><br>";
 
 //We have a function that takes grade as input and returns subject, subject code and minimum required marks to pass the subject.
+// first input grade of a student(int) then in second parameter is that array means subject(array).
+//it returns array datail about minmarks to be obtained,subject code, and subject name.
 function subdata (int $a,$array) {
     return $array[$a];
 }
@@ -74,6 +77,7 @@ echo "<tr><td>".$value['name']."</td><td>".$value['code']."</td><td>".$value['mm
 echo "</table><br>";
 
 //We have another function that takes student id and returns the subject code and their obtained marks.
+//first input is about student id(int) then that array means student(array) and if id match return marks detail array 
 function studata (int $a,$array) {
   foreach ($array as $key=>$value)
   {
