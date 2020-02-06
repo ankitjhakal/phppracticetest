@@ -8,6 +8,7 @@ $matches=array('1'=>array('csk'=>array('a'=>'10','b'=>'2','c'=>'12','d'=>'13','e
                '6'=> array('srh' => array('p' =>'0' ,'q'=>'2','r'=>'12','s'=>'3','t'=>'0'),'rcb' => array('f'=>'1','g'=>'2','h'=>'2','i'=>'3','j'=>'17')),
              );
 //highest score soultion
+// total of scores scored by each player 
 $player=array();
 foreach ($matches as $key1=>$value1)
 {
@@ -33,6 +34,7 @@ foreach ($player as $key => $value) {
 }
 
 // tournament winner code
+//given one point which team socre more
 echo "<br><br><strong>QUESTION 2 => TOURNAMENT RESULT</strong><br>";
 $arr=array();
 foreach ($matches as $key=>$value1)
@@ -62,6 +64,7 @@ echo "<br>";
 $max=max($arr);
 $count=0;
 echo "<br><strong>ANSWER 2</strong><br>";
+//if two team score equal points then tournament tied else top team will win the tournament
 foreach ($arr as $key => $value) {
  if($value==$max)
  { $count=$count+1;
@@ -76,13 +79,13 @@ else {
   echo "<strong>TOURNAMENT WINNER</strong>";
 }
 
-// max in a match code
+// max in a match 
 $maxtotal=0;
 echo "<br><br><strong>QUESTION 3 => MAX SCORE IN A MATCH</strong>";
 foreach ($matches as $key=>$value1)
 {
    $sum=0;
-
+// sum of scores scored by players in a team
     foreach ($value1 as $val)
     {
       $sum=$sum+ array_sum($val);
