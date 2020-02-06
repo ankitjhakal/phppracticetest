@@ -23,8 +23,10 @@ foreach ($student as $key=>$value)
   {
     for($x=0;$x<3;$x++)
     {
+      // if subject code match then add a new attribute in student array with mm(minimum marks) column
     if($subject[$gra][$x]['code']==$key1)
     { $student[$key]['mm'][$key1]=$subject[$gra][$x]['mm'];
+    //increment count for getting result which is more then 40 %
       if($subject[$gra][$x]['mm']<=$arr[$key1])
       {
         $count=$count+1;
@@ -32,16 +34,18 @@ foreach ($student as $key=>$value)
     }
     }
   }
-  //
+  //if count more then 2 means its more then 40%
   if($count>=2)
   {
     $student[$key]['res']="pass";
   }
+
   else
   {
     $student[$key]['res']="fail";
   }
 }
+//table for final result
 echo "<strong>FINAL RESULT</strong><br><table width=100% border=1 text-align=center><tr><th>name</th><th>dob</th><th>grade</th><th>subjects</th><th>result</th></tr>";
 foreach ($student as $key=>$value)
 {
